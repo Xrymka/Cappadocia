@@ -1,10 +1,55 @@
+@font-face {
+  font-family: 'balqis';
+  src: url('../fonts/balqis.woff2') format('woff2'),
+       url('../fonts/balqis.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../fonts/RobotoCondensed-Light.woff2') format('woff2'),
+       url('../fonts/RobotoCondensed-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../fonts/RobotoCondensed-LightItalic.woff2') format('woff2'),
+       url('../fonts/RobotoCondensed-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../fonts/RobotoCondensed-Regular.woff2') format('woff2'),
+       url('../fonts/RobotoCondensed-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 *, 
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-body
+body {
+  margin: 0;
+  color: #000;
+
+  font-family: 'Roboto Condensed', san-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -30,6 +75,11 @@ ul {
   padding: 0;
 }
 
+label {
+  visibility: hidden;
+  font-size: 0;
+}
+
 button {
   cursor: pointer;
 }
@@ -40,18 +90,78 @@ button {
   padding: 0 15px;
 }
 
+.page-section {
+  margin: 200px auto;
+  max-width: 1920px;
+}
+
+.section__title {
+  font-family: 'balqis';
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 128px;
+  color: #E2AB3F;
+}
+
+.section__subtitle {
+  margin-top: -25px;
+  margin-left: 181px;
+  margin-bottom: 100px;
+
+  font-style: italic;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.section__container {
+  max-width: 1230px;
+  position: absolute;
+  margin: 0 auto;
+  padding: 0 15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.btn {
+  padding: 11px 50px;
+
+  font-family: 'Roboto Condensed';
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 28px;
+  text-transform: uppercase;
+  
+  border: 1px solid #E2AB3F;
+  background: transparent;
+  transition: background-color 2ms ease-in-out;
+}
+
+.btn:hover {
+  background-color: #E2AB3F;
+}
+
 /* Header
 ===================*/
 .header {
-  background: url('images/bg.jpg') bottom center no-repeat;
+  background: url('../images/bg.jpg') bottom center no-repeat;
   height: 100vh;
   background-size: cover;
+
+  text-align: center;
 }
 
 .header__top {
   display: flex;
   justify-content: space-between;
-  margin-top: 72px;
+  padding-top: 72px;
+
+  font-family: 'Roboto Condensed';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
 }
 
 .nav__list {
@@ -60,4 +170,279 @@ button {
 
 .nav__list-item + .nav__list-item {
   margin-left: 52px;
+}
+
+.nav__list-link:hover {
+  text-decoration: underline;
+}
+
+.header__phone {
+  position: relative;
+  padding-left: 40px;
+}
+
+.header__phone::before {
+  position: absolute;
+  content: '';
+  display: block;
+  background: url(../images/phone_icon.svg);
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.header__title {
+  margin-top: 152px;
+
+  font-family: 'balqis';
+  font-weight: 400;
+  font-size: 250px;
+  line-height: 334px;
+}
+
+.header__subtitle {
+  margin-top: -66px;
+  margin-right: 86px;
+
+  font-family: 'Roboto Condensed';
+  font-weight: 300;
+  font-style: italic;
+  font-size: 56px;
+  line-height: 66px;
+
+  text-align: right;
+}
+
+/* Fairy-tail
+===================*/
+.fairy-tail__inner {
+  position: relative;
+}
+
+.fairy-tail__slider {
+  width: 50%;
+}
+
+.slick-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  border: none;
+  background-color: transparent;
+}
+
+.slick-prev {
+  left: 0;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.fairy-tail__body {
+  width: 50%;
+  height: 100%;
+  margin-left: auto;
+  padding-left: 55px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+} 
+
+.fairy-tail__text {
+  padding: 10px 0;
+}
+
+/* Our trip
+===================*/
+.out-trip__inner {
+  position: relative;
+}
+
+.out-trip__body {
+  width: 50%;
+  padding-right: 55px;
+}
+
+.our-trip__subtitle {
+  margin-left: 230px;
+}
+
+.our-trip__list {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.our-trip__item {
+  margin-bottom: 50px;
+}
+
+.our-trip__title {
+  line-height: 2;
+}
+
+.our-trip__slider {
+  width: 50%;
+  margin-left: auto;
+}
+
+/* Hotel
+===================*/
+.hotel__subtitle {
+  margin-left: 120px;
+} 
+
+.hotel__inner {
+  display: flex;
+}
+
+.hotel__image {
+  margin-right: 100px;
+}
+
+.hotel-text {
+  margin-bottom: 20px;
+}
+
+.hotel__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.hotel__item {
+  margin-top: 50px;
+}
+
+/* Price
+===================*/
+.price-subtitle {
+  margin-left: 120px;
+}
+
+.price__inner {
+  position: relative;
+  display: flex;
+}
+
+.price__on {
+  margin-right: 70px;
+  max-width: 530px;
+}
+
+.price__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.price__title {
+  margin-bottom: 50px;
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.balloon_1 {
+  position: absolute;
+  bottom: 0;
+  left: 91%;
+}
+
+.balloon_2 {
+  position: absolute;
+  top: 15%;
+  left: 85%;
+}
+
+.big_balloon {
+  position: absolute;
+  bottom: 50%;
+  left: 95%;
+}
+
+/* Order
+===================*/
+.order__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order__content {
+  text-align: center;
+  margin-right: 113px;
+}
+
+.order__info {
+  margin-bottom: 100px;
+}
+
+.order__date,
+.order__price {
+  font-family: 'balqis';
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 128px;
+  color: #E2AB3F;
+}
+
+.order__price {
+  margin-left: 110px;
+}
+
+.order__date-text,
+.order__price-text {
+  margin-top: -25px;
+  margin-bottom: 0px;
+
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.order__date-text {
+  margin-left: 200px;
+
+  font-style: italic;
+}
+
+.order__price-text {
+  margin-left: 310px;
+}
+
+.order__form {
+  max-width: 383px;
+  margin: 0 auto;
+}
+
+.form__title {
+  margin-bottom: 50px;
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.order__input {
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+  padding: 0 31px;
+  border: 1px solid #E2AB3F;
+
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.order__input::placeholder {
+  color: #000;
 }
